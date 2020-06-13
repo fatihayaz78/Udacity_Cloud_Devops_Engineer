@@ -1,0 +1,22 @@
+network
+create
+aws cloudformation create-stack --stack-name udagram-network --region us-west-2 --template-body file://network.yml --parameters file://net-param.json
+
+#update
+aws cloudformation update-stack --stack-name udagram-network --region us-west-2 --template-body file://network.yml --parameters file://net-param.json
+
+#delete
+aws cloudformation delete-stack --stack-name udagram-network
+
+
+
+#server
+
+#create
+aws cloudformation create-stack --stack-name udagram-server --region us-west-2 --template-body file://servers.yml --parameters file://server-param.json --capabilities CAPABILITY_IAM --capabilities CAPABILITY_NAMED_IAM
+
+#update
+aws cloudformation update-stack --stack-name udagram-server --region us-west-2 --template-body file://servers.yml --parameters file://server-param.json --capabilities CAPABILITY_IAM --capabilities CAPABILITY_NAMED_IAM
+
+#delete
+aws cloudformation delete-stack --stack-name udagram-server
